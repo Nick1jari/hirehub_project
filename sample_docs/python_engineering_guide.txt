@@ -1,0 +1,196 @@
+PRACTICAL PYTHON ENGINEERING — A FIELD GUIDE
+Internal Engineering Reference, Version 3.1
+
+This guide captures decisions and patterns we've found useful in production Python projects. It's opinionated by design — there are always tradeoffs, and this doc reflects the tradeoffs that have worked for us.
+
+---
+
+PROJECT STRUCTURE
+
+For most web services and data pipelines, we use the following layout:
+
+    project_root/
+    ├── src/
+    │   └── mypackage/
+    │       ├── __init__.py
+    │       ├── config.py
+    │       ├── models/
+    │       ├── services/
+    │       └── api/
+    ├── tests/
+    ├── pyproject.toml
+    └── docker-compose.yml
+
+The src layout (putting source code under a src/ directory) prevents accidental imports of the uninstalled package during development and is recommended for any project that will be packaged.
+
+Avoid flat structures where everything lives in the root. After a few months, flat structures become impossible to navigate.
+
+---
+
+DEPENDENCY MANAGEMENT
+
+Use pyproject.toml with a lockfile (poetry.lock or uv.lock). Never commit requirements.txt files generated from pip freeze — they're environment-specific and full of transitive dependencies that don't belong in your manifest.
+
+Separate runtime dependencies from development dependencies clearly:
+
+    [project]
+    dependencies = [
+        "fastapi>=0.115",
+        "sqlalchemy>=2.0",
+        "openai>=1.0",
+    ]
+
+    [project.optional-dependencies]
+    dev = [
+        "pytest",
+        "ruff",
+        "mypy",
+    ]
+
+Pin major versions, not exact versions, in your manifest. Let the lockfile handle the exact versions. This gives you security patches without breaking changes.
+
+---
+
+TYPE HINTS
+
+Use type hints everywhere in public interfaces. For internal functions called only by other internal functions, use judgment — adding types to a 3-line helper that's obvious from context is noise.
+
+Prefer using the built-in generics (list, dict, tuple) over importing from typing in Python 3.9+. Use from __future__ import annotations at the top of files if you need forward references.
+
+    # Good (Python 3.10+)
+    def process(items: list[str]) -> dict[str, int]:
+        ...
+
+    # Avoid (unless supporting Python 3.8)
+    from typing import Dict, List
+    def process(items: List[str]) -> Dict[str, int]:
+        ...
+
+Run mypy in strict mode on all new code. Introduce it gradually to existing codebases using per-module ignore files.
+
+---
+
+ASYNC PATTERNS
+
+FastAPI and other async frameworks genuinely benefit from async I/O for network-bound operations. But async is not magic — if you have CPU-bound work, async doesn't help and can actively hurt throughput by starving the event loop.
+
+Rules of thumb:
+- Database queries, HTTP calls, file I/O: use async/await
+- CPU-bound work (ML inference, image processing, hashing large files): run in a thread pool (asyncio.to_thread) or push to a task queue
+- Never call time.sleep() in async code — use asyncio.sleep()
+- Avoid mixing sync and async ORM patterns in the same request path
+
+For SQLAlchemy in async FastAPI apps, use the async session:
+
+    from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+
+    engine = create_async_engine("postgresql+asyncpg://...")
+    async_session = sessionmaker(engine, class_=AsyncSession)
+
+The synchronous SQLAlchemy session is fine if your worker thread pool is sized appropriately. We prefer sync SQLAlchemy for simplicity unless we need to handle thousands of concurrent connections.
+
+---
+
+ERROR HANDLING
+
+Only catch exceptions you know how to handle. The anti-pattern of catching Exception everywhere and logging "something went wrong" is worse than letting it crash — at least a crash gives you a traceback.
+
+    # Bad
+    try:
+        result = fetch_data()
+    except Exception as e:
+        logger.error("Error: %s", e)
+        return None
+
+    # Better
+    try:
+        result = fetch_data()
+    except httpx.TimeoutException:
+        raise ServiceUnavailableError("External service timed out")
+    except httpx.HTTPStatusError as e:
+        if e.response.status_code == 404:
+            return None
+        raise
+
+Use custom exception classes for domain errors. This lets callers handle them specifically without catching broad exception types.
+
+For retries on transient failures (network timeouts, rate limits), use tenacity rather than writing your own retry loop. It handles exponential backoff, jitter, and logging correctly.
+
+---
+
+DATABASE PATTERNS
+
+Migrations: Always use Alembic. Never use create_all() in production — you lose the ability to track schema history and make incremental changes.
+
+Connection pooling: Use SQLAlchemy's built-in pool with pool_pre_ping=True. This drops stale connections before using them, which prevents errors after database restarts. Set pool_size and max_overflow based on your expected concurrency.
+
+N+1 queries: Use joinedload() or selectinload() for relationships you know you'll access. The ORM's lazy loading is convenient during development but kills performance in production when you're iterating over collections.
+
+    # Triggers N+1 queries
+    users = db.query(User).all()
+    for user in users:
+        print(user.posts)  # one query per user
+
+    # Single query
+    users = db.query(User).options(selectinload(User.posts)).all()
+
+Transactions: Keep transactions short. Long-running transactions hold locks and kill throughput. Do expensive computation outside the transaction, then open a transaction only for the write.
+
+---
+
+TESTING
+
+Test behavior, not implementation. Tests that assert on internal state or mock too many things break whenever you refactor and give false confidence because they're testing the mock, not the code.
+
+Use pytest with fixtures for database setup. For tests that need a database, use a real test database (not SQLite unless your production database is also SQLite), rolled back between tests.
+
+    @pytest.fixture
+    def db_session():
+        connection = engine.connect()
+        transaction = connection.begin()
+        session = Session(bind=connection)
+        yield session
+        session.close()
+        transaction.rollback()
+        connection.close()
+
+Test pyramid: many unit tests, some integration tests, few end-to-end tests. Unit tests should be fast (under 1ms each). Integration tests are allowed to be slow but should still be deterministic.
+
+For external services (OpenAI, Stripe, etc.), use response fixtures or a VCR-style cassette library, not mocks. Mocks test that you called the right method with the right arguments — cassettes test that your code actually handles the response correctly.
+
+---
+
+LOGGING
+
+Use structured logging from the start. python-json-logger or structlog make logs machine-parseable, which matters when you're searching across thousands of requests in a log aggregator.
+
+Log at the right level:
+- DEBUG: anything useful for debugging a specific problem
+- INFO: normal operational events (request received, job started, job finished)
+- WARNING: unexpected but handled situations (retrying after timeout, falling back to default)
+- ERROR: failures that require attention
+- CRITICAL: system-level failures (database unavailable, out of memory)
+
+Never log sensitive data. This sounds obvious but PII, API keys, and tokens routinely end up in logs. Add a log sanitizer that scrubs known sensitive field names if your codebase handles user data.
+
+---
+
+PERFORMANCE
+
+Profile before optimizing. Most performance problems are in one or two places that aren't obvious from reading the code. Use py-spy for CPU profiling in production (it attaches without restarting the process) and memory_profiler for memory issues.
+
+Caching: Redis with a short TTL is the right answer for most read-heavy endpoints. Use it for things that are expensive to compute and don't need to be perfectly fresh. Don't cache things that change frequently or that are user-specific unless you key the cache correctly.
+
+Pagination: Always paginate database queries. A query with no limit will eventually kill your database when the table grows. Use cursor-based pagination (WHERE id > last_seen_id) rather than offset pagination for large tables — offset pagination does a full scan to skip rows.
+
+---
+
+SECURITY
+
+Validate all input at the boundary. Pydantic handles this well for FastAPI — any data that reaches your service layer should already be typed and validated.
+
+Never construct SQL queries by string interpolation. SQLAlchemy's ORM and core expression language handle parameterization correctly. If you're using raw SQL, use bound parameters.
+
+Keep secrets in environment variables. Never commit API keys, database passwords, or private keys to version control. Use a secrets manager (AWS Secrets Manager, HashiCorp Vault) in production. For local development, .env files loaded via python-dotenv are fine but must be in .gitignore.
+
+Dependency scanning: Run pip-audit or equivalent in CI to catch known vulnerabilities in dependencies. Many breaches come from outdated packages, not novel attack vectors.

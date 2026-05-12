@@ -1,0 +1,54 @@
+GLOBAL CLIMATE CHANGE ASSESSMENT REPORT 2024
+Prepared by the International Environmental Research Consortium
+
+EXECUTIVE SUMMARY
+
+Global average surface temperatures have risen by approximately 1.2 degrees Celsius above pre-industrial levels as of 2024. The rate of warming has accelerated over the past two decades, with the last ten years being the warmest on record. Current emissions trajectories place the world on a path toward 2.5 to 3.0 degrees of warming by 2100 if no significant policy interventions occur.
+
+Carbon dioxide concentrations in the atmosphere reached 421 parts per million (ppm) in 2023, the highest level in at least 800,000 years. Methane concentrations have also hit record highs, driven primarily by agricultural activity, landfill emissions, and fossil fuel extraction. Combined, these greenhouse gases are trapping enough heat to fundamentally alter weather patterns across every continent.
+
+OBSERVED IMPACTS
+
+Sea Level Rise
+Global mean sea level has risen by approximately 20 centimeters since 1900, with the rate of rise accelerating to about 3.7 millimeters per year over the 2006–2018 period. Thermal expansion of seawater accounts for roughly 43% of observed rise, while glacier and ice sheet melt contribute the remainder. Low-lying coastal regions, including major cities like Miami, Jakarta, and Amsterdam, face significant inundation risk by mid-century.
+
+Arctic Sea Ice
+The Arctic has warmed at roughly four times the global average rate, a phenomenon known as Arctic amplification. September minimum sea ice extent has declined by approximately 13% per decade since satellite measurements began in 1979. The Arctic Ocean may experience its first ice-free summer before 2040, with cascading effects on global ocean circulation patterns.
+
+Extreme Weather Events
+The frequency and intensity of heat waves have increased markedly. Events that would have occurred once every 50 years in a pre-industrial climate are now occurring roughly five times as frequently. Attribution science has linked climate change to increased intensity of hurricanes, flooding events, and drought conditions across multiple regions. The 2023 European summer recorded temperatures exceeding 45 degrees Celsius in several countries, a pattern that would have been nearly impossible without anthropogenic warming.
+
+Ecosystem Disruption
+Coral reef bleaching events have become more frequent and severe. The Great Barrier Reef experienced mass bleaching in 2016, 2017, 2020, 2022, and 2024. Species range shifts are occurring at rates faster than most ecosystems can adapt. Arctic and alpine species face particular pressure as their habitats shrink. Ocean acidification, caused by seawater absorbing excess atmospheric CO2, is disrupting the ability of shellfish, corals, and other calcifying organisms to build their shells and skeletons.
+
+EMISSIONS SOURCES AND TRENDS
+
+Energy production remains the single largest source of global greenhouse gas emissions, accounting for approximately 34% of the total. Transportation contributes 16%, agriculture 18%, industry 24%, and buildings 6%. Deforestation and land-use change add an additional 11%, though this figure is highly variable year to year.
+
+China is currently the world's largest emitter in absolute terms, responsible for roughly 27% of global CO2 emissions. The United States accounts for 14%, the European Union 7%, and India 7%. However, on a per-capita basis, the United States, Australia, and Canada remain among the highest emitters globally.
+
+Between 2000 and 2020, renewable energy capacity grew from 754 gigawatts to 2,799 gigawatts worldwide. Solar photovoltaic capacity alone increased by a factor of more than 300 during this period. Despite this growth, fossil fuels still supplied approximately 80% of global primary energy in 2023.
+
+POLICY LANDSCAPE
+
+The Paris Agreement, adopted in 2015, set a target of limiting warming to well below 2 degrees Celsius above pre-industrial levels, with efforts to limit warming to 1.5 degrees. As of 2024, nationally determined contributions submitted by signatories are collectively insufficient to meet these targets.
+
+Carbon pricing mechanisms are in place in 73 jurisdictions, covering roughly 23% of global emissions. The EU Emissions Trading System remains the largest carbon market, with prices reaching over 100 euros per tonne of CO2 in 2023. However, most economists argue that effective climate action requires carbon prices of $150 or more per tonne by 2030.
+
+Several countries have committed to net-zero emissions targets. The European Union targets 2050, the United States targets 2050, and China targets 2060. Critics argue these targets lack the near-term policy measures required to stay on track, and that current investment levels in clean energy remain well below what is needed.
+
+MITIGATION PATHWAYS
+
+To limit warming to 1.5 degrees Celsius, global CO2 emissions must reach net zero by approximately 2050, requiring a 45% reduction from 2010 levels by 2030. This necessitates rapid phase-out of coal power, massive expansion of renewable energy, electrification of transport and heating, improved energy efficiency across all sectors, and substantial carbon removal.
+
+Negative emissions technologies, including direct air capture, bioenergy with carbon capture and storage (BECCS), and enhanced weathering, are likely to be needed to offset residual hard-to-abate emissions. However, these technologies remain unproven at scale, and their widespread deployment faces significant land, water, and economic constraints.
+
+ADAPTATION MEASURES
+
+Adaptation to unavoidable climate change is now recognized as essential alongside mitigation. Key adaptation strategies include coastal flood defenses and managed retreat from high-risk areas, drought-resistant crop development and changes to agricultural practices, early warning systems for extreme weather events, urban heat island mitigation through green infrastructure, and protection and restoration of natural carbon sinks including forests and wetlands.
+
+The economic costs of adaptation are substantial. Developing nations, which have contributed least to cumulative emissions, face the greatest adaptation challenges and have the fewest resources to address them. The Loss and Damage mechanism established at COP27 represents a first step toward international financial support for climate-vulnerable nations, though the funding levels committed remain far below estimated needs.
+
+CONCLUSION
+
+The scientific evidence for human-caused climate change is unequivocal. The window to limit warming to 1.5 degrees Celsius is rapidly closing and may already be effectively closed without emergency-scale action. Even at 2 degrees, the consequences for ecosystems and human societies will be severe. The decisions made in the next decade will determine the trajectory of Earth's climate for centuries. Immediate, deep, and sustained reductions in greenhouse gas emissions are the only path to avoiding the most catastrophic outcomes.

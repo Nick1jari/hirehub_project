@@ -1,0 +1,104 @@
+ACME TECHNOLOGIES — EMPLOYEE HANDBOOK
+Effective Date: January 1, 2024
+Version: 7.2
+
+This handbook describes the policies, benefits, and expectations that apply to all full-time employees of Acme Technologies, Inc. Part-time and contract workers should refer to their individual agreements for applicable policies. This document supersedes all previous versions and is updated annually or as policies change.
+
+---
+
+EMPLOYMENT BASICS
+
+Work Hours and Location
+Standard full-time employment at Acme is 40 hours per week. We operate on a hybrid model: employees are expected to be in the office Tuesday through Thursday and may work remotely Monday and Friday. Exceptions to this schedule require manager approval and should be discussed quarterly during your review.
+
+Core hours are 10:00 AM to 3:00 PM in your local timezone. Outside of core hours, you have flexibility to structure your day as you see fit, provided your work is completed and you're available for any scheduled meetings.
+
+Employees who need to work in a timezone more than 2 hours from their team's primary timezone must get approval from their manager and HR, as scheduling difficulties at that gap tend to compound over time.
+
+Probationary Period
+All new hires begin with a 90-day probationary period. During this time, either the employee or the company may end employment without notice. After the probationary period, standard termination procedures apply. You'll have check-ins at 30, 60, and 90 days with your manager to discuss your progress.
+
+---
+
+COMPENSATION AND PAYROLL
+
+Pay Schedule
+Employees are paid bi-weekly, on alternating Fridays. Direct deposit is required and must be set up within your first week through the HR portal. Your first paycheck may be delayed by up to one pay period while payroll is being configured.
+
+Salary Reviews
+Compensation reviews occur annually in March. The review considers market data, individual performance (from your end-of-year review), and company performance. Merit increases typically range from 0% to 8%, with additional equity grants available for exceptional performers. Promotions may include a larger adjustment and occur outside the normal review cycle.
+
+Overtime
+Exempt employees do not receive additional compensation for hours worked beyond 40 per week. Non-exempt employees are entitled to 1.5x their hourly rate for all hours beyond 40 in a workweek. If you're unsure of your classification, check your offer letter or ask HR.
+
+Equity
+Employees at the senior level (L4) and above receive equity as part of their compensation package. Equity vests over 4 years with a 1-year cliff — you receive nothing in the first year, then 25% vests at your one-year anniversary, and the remaining 75% vests monthly over the following 36 months. Equity grants are in the form of Restricted Stock Units (RSUs) for employees and Incentive Stock Options (ISOs) for executives.
+
+---
+
+BENEFITS
+
+Health Insurance
+Acme covers 100% of employee premiums for medical, dental, and vision insurance. Coverage begins on your first day of employment. Dependents may be added to the plan, with the company covering 70% of dependent premiums. We offer three medical plan options — a high-deductible health plan (HDHP) with an HSA, a PPO, and an HMO — with open enrollment each November.
+
+401(k) and Retirement
+Employees are eligible to contribute to our 401(k) plan immediately upon hire. Acme matches 50% of contributions up to 6% of salary, meaning the maximum company match is 3% of your salary. The match vests over 3 years: 33% after year one, 67% after year two, and 100% after year three. We use Fidelity as our 401(k) administrator.
+
+Paid Time Off
+Full-time employees receive 20 days (4 weeks) of paid time off per year, which accrues at 1.67 days per month. There is no maximum accrual cap, but unused PTO does not pay out at termination in most states. Additionally, all employees receive 10 paid company holidays per year, including New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving and the day after, and Christmas Day. The remaining 4 holidays are "floating" and can be used for any purpose.
+
+Parental Leave
+All employees who have been with the company for at least 12 months are eligible for 16 weeks of fully paid parental leave following the birth, adoption, or foster placement of a child. Leave must be taken within 12 months of the qualifying event. Both primary and secondary caregivers are entitled to the full 16 weeks. Leave may be taken continuously or split into two periods of at least 2 weeks each.
+
+Mental Health and Wellness
+Acme provides access to Modern Health, an app-based mental health platform that includes unlimited therapy sessions and coaching at no cost to employees. All employees also receive a $1,200 annual wellness stipend, which can be used for gym memberships, fitness equipment, meditation apps, ergonomic furniture for home offices, or other wellness-related expenses. Reimbursements are processed through the Expensify app.
+
+Learning and Development
+Each employee has a $2,500 annual learning budget that resets each January. It can be used for courses, books, conferences, or certifications relevant to your role or career development. Manager approval is required for items over $500. Acme also sponsors study groups and internal learning sessions monthly.
+
+---
+
+PERFORMANCE AND CAREER DEVELOPMENT
+
+Performance Reviews
+Formal performance reviews occur twice a year: a mid-year check-in in June and an annual review in December. Reviews use a 5-point scale: 1 (Below Expectations), 2 (Partially Meets Expectations), 3 (Meets Expectations), 4 (Exceeds Expectations), and 5 (Outstanding). Scores of 1 or 2 for two consecutive review cycles trigger a performance improvement plan (PIP).
+
+Promotions
+Promotions are not tied to the annual review cycle and can occur at any time when a role opens up or when an employee is demonstrably performing at the next level consistently. Employees should discuss promotion readiness with their manager and can request a formal review. Promotions require VP-level approval in addition to manager and HR sign-off.
+
+Career Ladders
+Every team has a defined career ladder with levels from L1 (entry-level) through L7 (principal/distinguished). The full ladder descriptions are available in the internal wiki. In engineering, the transition from L4 to L5 is generally considered the most significant, as it marks the shift from primarily individual contributor work to significant cross-team influence.
+
+---
+
+WORKPLACE POLICIES
+
+Code of Conduct
+Acme is committed to a workplace free of discrimination, harassment, and retaliation. We do not tolerate harassment based on race, gender, sexual orientation, age, disability, religion, national origin, or any other protected characteristic. All employees are required to complete harassment prevention training annually. Violations of this policy should be reported to HR or through the anonymous reporting hotline at 1-800-555-0199.
+
+Conflicts of Interest
+Employees must avoid situations where their personal interests conflict with the company's interests. This includes outside employment at direct competitors, board positions at partner or competitor companies, and personal financial interests in vendors or clients. Disclose potential conflicts to your manager and HR in writing within 30 days of the situation arising.
+
+Confidentiality
+All employees sign a confidentiality agreement upon joining. Do not share proprietary information, customer data, financial results, product roadmaps, or other non-public information with anyone outside the company, including family members. When in doubt about what's confidential, ask your manager or Legal before sharing.
+
+Device and Data Security
+Company-issued devices must have full-disk encryption enabled and must be kept up to date with security patches. Do not install unauthorized software. All production access requires MFA and must go through approved VPN or SSO. Personal devices used for work must enroll in our MDM (mobile device management) program. Report lost or stolen devices to IT immediately.
+
+---
+
+OFFBOARDING
+
+Resignation
+Please provide at least two weeks written notice when resigning. Longer notice (3–4 weeks) is appreciated for senior roles and helps with transition planning, though it's not required. On your last day, IT will conduct an exit process to retrieve equipment and revoke system access. Your final paycheck will include all accrued PTO in states where payout is required by law.
+
+Equipment Return
+All company equipment must be returned within 5 business days of your last day. This includes laptops, monitors, peripherals, and any other company property. Failure to return equipment may result in a charge equal to the equipment's depreciated value.
+
+---
+
+ACKNOWLEDGEMENT
+
+By accepting employment at Acme Technologies, you acknowledge that you have read, understood, and agree to comply with the policies in this handbook. This handbook does not constitute a contract of employment. Acme Technologies reserves the right to modify any policy at any time with appropriate notice to employees.
+
+Questions about any policy in this handbook should be directed to hr@acmetechnologies.example.com.
